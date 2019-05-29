@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
  自定义导航条信息字典
  key             value
  KHeaderViewH       导航条高度
+ KHeaderBgImgName   导航条背景图(可不传值)
  KStartPoint        弧线起始点(默认CGPointZero)
  KEndPoint          弧线结束点(默认CGPointZero)
  KControlPoint01    弧线控制点1(默认CGPointZero)
@@ -26,10 +27,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (NSDictionary *)navHeaderViewInfoDic;
 
-/**
- 自定义titleView
- */
-- (UIView *)customNavHeaderView;
+- (UIView *)customNavTitleView;
+
+- (UIView *)customNavLeftView;
+
+- (UIView *)customNavRightView;
 
 - (void)navHeaderViewDidClickBackBtn;
  

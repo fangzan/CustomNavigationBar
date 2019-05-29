@@ -34,7 +34,13 @@ typedef NS_ENUM(NSInteger,CNavHeaderViewType)
 
 @property (nonatomic, strong) UIButton *closeBtn;
 
+@property (nonatomic, strong) UIView *leftView;
+
 @property (nonatomic, strong) UIView *titleView;
+
+@property (nonatomic, strong) UIView *rightView;
+// 背景图
+@property (nonatomic, strong) UIImageView *bgImageView;
 // 弧线起始点
 @property (nonatomic, assign) CGPoint startPoint;
 // 弧线结束点

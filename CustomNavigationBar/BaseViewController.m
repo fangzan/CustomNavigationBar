@@ -24,33 +24,21 @@
  自定义导航条信息字典
     key             value
  KHeaderViewH       导航条高度
+ KHeaderBgImgName   导航条背景图
  KStartPoint        弧线起始点
  KEndPoint          弧线结束点
  KControlPoint01    弧线控制点1
  KControlPoint02    弧线控制点2
  */
 - (NSDictionary *)navHeaderViewInfoDic { return nil; };
-
-/**
- 自定义titleView
- */
-- (UIView *)customNavHeaderView {
-    UILabel *titleLB = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
-    titleLB.textAlignment = NSTextAlignmentCenter;
-    titleLB.text = @"BaseViewController";
-    return titleLB;
-};
-
+- (UIView *)customNavTitleView { return nil; };
+- (UIView *)customNavLeftView { return nil; }
+- (UIView *)customNavRightView { return nil; }
 - (void)navHeaderViewDidClickBackBtn {};
-
 - (void)navHeaderViewWillShow:(CNavHeaderView *)headerView {};
-
 - (void)navHeaderView:(CNavHeaderView *)headerView didChangeWithProgress:(CGFloat)progress {};
-
 - (void)navHeaderViewDidShow:(CNavHeaderView *)headerView {};
-
 - (void)navHeaderViewWillDismiss:(CNavHeaderView *)headerView {};
-
 - (void)navHeaderViewDidDismiss:(CNavHeaderView *)headerView {};
 
 /*

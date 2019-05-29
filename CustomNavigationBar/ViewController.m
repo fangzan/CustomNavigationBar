@@ -32,21 +32,44 @@
     CGPoint controlPoint02 = CGPointMake(KNHSCREEN_W*2/3, KNavHeight*1 - KArcHeight + 3);
     
     return @{@"KHeaderViewH":@(headerView_H),
+             @"KHeaderBgImgName":@"changecode_bg",
              @"KStartPoint":NSStringFromCGPoint(startPoint),
              @"KEndPoint":NSStringFromCGPoint(endPoint),
              @"KControlPoint01":NSStringFromCGPoint(controlPoint01),
              @"KControlPoint02":NSStringFromCGPoint(controlPoint02)};
 }
 
+
 /**
  自定义titleView
  */
-- (UIView *)customNavHeaderView {
-    UILabel *titleLB = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 30)];
-    titleLB.textAlignment = NSTextAlignmentCenter;
-    titleLB.text = @"ViewController";
-    return titleLB;
+- (UIView *)customNavTitleView {
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(0, 0, 100, 30);
+    [btn setTitle:@"ViewController" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(didClick:) forControlEvents:UIControlEventTouchUpInside];
+    return btn;
 };
+
+- (void)didClick:(UIButton *)sender
+{
+    NSLog(@"123");
+    
+    [sender setTitle:@"123" forState:UIControlStateNormal];
+}
+
+- (UIView *)customNavRightView
+{
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(0, 0, 100, 30);
+    [btn setTitle:@"right" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(didRightClick:) forControlEvents:UIControlEventTouchUpInside];
+    return btn;
+}
+- (void)didRightClick:(UIButton *)sender
+{
+    NSLog(@"View - right");
+}
 
 - (void)navHeaderViewDidClickBackBtn
 {

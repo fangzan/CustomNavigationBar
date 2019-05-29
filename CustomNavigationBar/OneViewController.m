@@ -51,15 +51,29 @@
     
 }
 
-/**
- 自定义titleView
- */
-- (UIView *)customNavHeaderView {
-    UILabel *titleLB = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
-    titleLB.textAlignment = NSTextAlignmentCenter;
-    titleLB.text = @"OneViewController";
-    return titleLB;
-};
+///**
+// 自定义titleView
+// */
+//- (UIView *)customNavTitleView {
+//    UILabel *titleLB = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
+//    titleLB.textAlignment = NSTextAlignmentCenter;
+//    titleLB.text = @"OneViewController";
+//    return titleLB;
+//};
+
+- (UIView *)customNavRightView
+{
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(0, 0, 100, 30);
+    [btn setTitle:@"right" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(didClick:) forControlEvents:UIControlEventTouchUpInside];
+    return btn;
+}
+
+- (void)didClick:(UIButton *)sender
+{
+    NSLog(@"One - right");
+}
 
 - (void)navHeaderViewWillShow:(CNavHeaderView *)headerView
 {
