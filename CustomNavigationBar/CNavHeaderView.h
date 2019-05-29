@@ -50,6 +50,8 @@ typedef NS_ENUM(NSInteger,CNavHeaderViewType)
 // 默认控制点02
 @property (nonatomic, assign) CGPoint controlPoint02;
 
+- (void)updateContentViewFrame;
+
 @end
 
 NS_ASSUME_NONNULL_END

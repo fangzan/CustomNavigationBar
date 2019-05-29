@@ -50,11 +50,16 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+
+    [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
+    [self updateContentViewFrame];
+}
+
+- (void)updateContentViewFrame
+{
     CGFloat KSelfWidth = CGRectGetWidth(self.frame);
     CGFloat KSelfHeight = CGRectGetHeight(self.frame);
-    
-    [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
     CGFloat KItemMargin = 5; CGFloat KItemHeight = 30;
     CGFloat KItemY = KSelfHeight>=KNavHeight?KStatuBarHeight + (KNavBarHeight - KItemHeight)/2:(KSelfHeight - KStatuBarHeight - KArcHeight)/2;
@@ -70,7 +75,6 @@
     [self addSubview:self.titleView];
     self.rightView.frame = CGRectMake(KSelfWidth - CGRectGetWidth(self.rightView.frame) - KItemMargin, KItemY, CGRectGetWidth(self.rightView.frame), CGRectGetHeight(self.rightView.frame));
     [self addSubview:self.rightView];
-    
 }
 
 - (void)drawRect:(CGRect)rect

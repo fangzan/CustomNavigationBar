@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.viewType = CNavHeaderViewTypeNone;
+    self.viewType = CNavHeaderViewTypeDefault;
     
     self.view.backgroundColor = [UIColor whiteColor];
 

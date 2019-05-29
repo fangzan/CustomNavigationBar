@@ -22,6 +22,7 @@
     //计划大厅
     OneViewController *planHallVC = [[OneViewController alloc] init];
     planHallVC.hidesBottomBarWhenPushed = NO;
+    planHallVC.title = @"One";
     CNavigationController *naviPH = [[CNavigationController alloc] initWithRootViewController:planHallVC];
     naviPH.tabBarItem = [self tabBarItemWithTitle:@"One" image:[UIImage imageNamed:@"tab_plan_nor"] selectedImage:[UIImage imageNamed:@"tab_plan_pre"] tag:1];
     naviPH.tabBarItem.accessibilityHint = @"One";

@@ -30,7 +30,7 @@
     CGPoint endPoint = CGPointMake(KNHSCREEN_W, KNavHeight + KArcHeight);
     CGPoint controlPoint01 = CGPointMake(KNHSCREEN_W/3, KNavHeight*1.5 + KArcHeight - 3);
     CGPoint controlPoint02 = CGPointMake(KNHSCREEN_W*2/3, KNavHeight*1 - KArcHeight + 3);
-    
+
     return @{@"KHeaderViewH":@(headerView_H),
              @"KHeaderBgImgName":@"changecode_bg",
              @"KStartPoint":NSStringFromCGPoint(startPoint),

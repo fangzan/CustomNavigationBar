@@ -220,8 +220,6 @@
     return titleView;
 }
 
-
-
 /// 计算转换进度方法
 - (NSString *)getChangePointStrWithFromPointStr:(NSString *)fromPointStr toPointStr:(NSString *)toPointStr progress:(CGFloat)progress
 {
@@ -256,6 +254,7 @@
     _headerView.endPoint = CGPointFromString(headerInfoDic[@"KEndPoint"]);
     _headerView.controlPoint01 = CGPointFromString(headerInfoDic[@"KControlPoint01"]);
     _headerView.controlPoint02 = CGPointFromString(headerInfoDic[@"KControlPoint02"]);
+    [_headerView updateContentViewFrame];
     [_headerView setNeedsDisplay];
 }
 
@@ -269,7 +268,7 @@
     CGPoint controlPoint01 = CGPointZero;
     CGPoint controlPoint02 = CGPointZero;
     NSMutableDictionary *headerViewDic = [NSMutableDictionary dictionaryWithDictionary:[viewController navHeaderViewInfoDic]];
-    if (headerViewDic != nil) {
+    if (headerViewDic.count > 0) {
         headerView_H = [headerViewDic[@"KHeaderViewH"] floatValue]>0?[headerViewDic[@"KHeaderViewH"] floatValue]:0.0f;
         headerBgImgName = headerViewDic[@"KHeaderBgImgName"]!=nil?headerViewDic[@"KHeaderBgImgName"]:@"";
         if (headerViewDic[@"KHeaderBgImgName"]==nil) {
